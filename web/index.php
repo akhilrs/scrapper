@@ -31,19 +31,20 @@
 	<div class="col-md-12">
 		<?php
 
-		include 'htmlParser/simple_html_dom.php';
+include 'htmlParser/simple_html_dom.php';
 
-		if (isset($_POST['cmd']) && $_POST['cmd'] === 'fetch-data' && !empty(trim($_POST['url']))){
-			// $url = 'https://www.groupon.ie/deals/gg-grs-gadgets-ltd-1-131?utm_medium=afl&utm_source=TDB&utm_campaign=IE_DT_AFL_TDB_TDB_TIM_TTT_SR_LBP_CHA_YBR_pid*2772705_uji*9f3e37b11f2fdef63ad955f403fbfcd8';
-			$url = trim($_POST['url']);
-			$html = file_get_html($url);
-			echo '<h4>Product Expiry Details:</h4>';
-			foreach ($html->find('div[class=limited-time]') as $element) {
-				echo $element->innertext;
-			}
-		}
+if (isset($_POST['cmd']) && $_POST['cmd'] === 'fetch-data' && !empty(trim($_POST['url']))) {
+	// $url = 'https://www.groupon.ie/deals/gg-grs-gadgets-ltd-1-131?utm_medium=afl&utm_source=TDB&utm_campaign=IE_DT_AFL_TDB_TDB_TIM_TTT_SR_LBP_CHA_YBR_pid*2772705_uji*9f3e37b11f2fdef63ad955f403fbfcd8';
+	$url = trim($_POST['url']);
+	echo $url;
+	$html = file_get_html($url);
+	echo '<h4>Product Expiry Details:</h4>';
+	foreach ($html->find('div[class=limited-time]') as $element) {
+		echo $element->innertext;
+	}
+}
 
-		?>
+?>
 	</div>
 </div>
 
