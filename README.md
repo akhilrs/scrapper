@@ -10,7 +10,7 @@ Install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
 ```sh
 $ git clone git@github.com:akhilrs/scrapper.git # or clone your own fork
-$ cd webScrapper
+$ cd webScrappering
 $ heroku create
 $ git push heroku master
 $ heroku open
